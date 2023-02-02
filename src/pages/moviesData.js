@@ -2,9 +2,9 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { MovieContext } from "../context";
-import "./MainPage.css";
+import "./moviesData.css";
 
-const MainPage = () => {
+const MoviesData = () => {
   const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
   const { state, setState } = useContext(MovieContext);
@@ -23,6 +23,10 @@ const MainPage = () => {
   };
 
   useEffect(() => {
+    moviesData();
+  }, []);
+
+  const moviesData = () => {
     const options = {
       method: "GET",
       url: "https://imdb8.p.rapidapi.com/title/v2/find",
@@ -43,7 +47,7 @@ const MainPage = () => {
       .catch(function (error) {
         console.error(error);
       });
-  }, []);
+  };
 
   return (
     <>
@@ -65,4 +69,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default MoviesData;

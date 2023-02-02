@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 import { MovieContext } from "../context";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./Description.css";
+import "./movieDescription.css";
 
-const Description = () => {
+const MovieDescription = () => {
   const [movieData, setMovieData] = useState([]);
   const { state, setState } = useContext(MovieContext);
 
@@ -12,6 +12,10 @@ const Description = () => {
   // console.log("ID", id);
 
   useEffect(() => {
+    moviesDescription();
+  }, [id]);
+
+  const moviesDescription = () => {
     const options = {
       method: "GET",
       url: "https://imdb8.p.rapidapi.com/title/get-synopses",
@@ -31,9 +35,9 @@ const Description = () => {
       .catch(function (error) {
         console.error(error);
       });
-  }, [id]);
+  };
 
-  console.log("State", state);
+  // console.log("State", state);
 
   return (
     <div className="about-movie">
@@ -47,4 +51,4 @@ const Description = () => {
   );
 };
 
-export default Description;
+export default MovieDescription;

@@ -1,8 +1,8 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/Login";
-import MainPage from "./pages/MainPage";
-import Description from "./pages/Description";
+import MoviesData from "./pages/moviesData";
+import MovieDescription from "./pages/movieDescription";
 
 const AppRoutes = () => {
   const router = createBrowserRouter([
@@ -12,12 +12,12 @@ const AppRoutes = () => {
     },
     {
       path: "/movies",
-      element: <MainPage />,
+      element: <MoviesData />,
     },
 
     {
       path: "/movies/:id",
-      element: <Description />,
+      element: <MovieDescription />,
     },
   ]);
 
