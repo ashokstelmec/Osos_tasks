@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { MovieContext } from "../context";
 import "./moviesData.css";
+import Header from "./Header";
 
 const MoviesData = () => {
   const [movies, setMovies] = useState([]);
@@ -14,6 +15,7 @@ const MoviesData = () => {
     //  /title/123
     // console.log(id.split('/'))
     const moviesId = id.split("/");
+    // console.log(moviesId);
     navigate("/movies/" + moviesId[2]);
 
     //  movie.image.url
@@ -32,7 +34,7 @@ const MoviesData = () => {
       url: "https://imdb8.p.rapidapi.com/title/v2/find",
       params: { title: "game of", limit: "20", sortArg: "moviemeter,asc" },
       headers: {
-        "X-RapidAPI-Key": "4840b57dbbmshfe6dc67ab3ba8bcp1bd5bcjsn006b80f4ec62",
+        "X-RapidAPI-Key": "e382f7fbc9mshd40fb03cea68541p1a19b9jsn6b0a16e430d8",
         "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
       },
     };
@@ -51,6 +53,7 @@ const MoviesData = () => {
 
   return (
     <>
+      <Header />
       <div className="movie-data">
         {movies.map((el, i) => (
           <div className="movies-data" key={i}>

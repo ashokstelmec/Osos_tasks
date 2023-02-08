@@ -16,24 +16,23 @@
     row-gap: 7rem;
     padding-inline: 10rem;
   }
+
+  @media only screen and (max-width:770px) {
+    .movie-data{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media only screen and (max-width:568px) {
+    .movie-data{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
   
-  p{
+  .movies-data p{
     line-height: 2rem;
-  }
-  
-  .load-more-button{
-    margin-top: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-  }
-  
-  button{
-    padding: 0.7rem 3rem;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(20, 190, 20);
-    color: #fff;
   }
   
   .play-now{
